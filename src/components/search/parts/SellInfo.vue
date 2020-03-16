@@ -8,7 +8,7 @@
       </v-card-title>
       <v-row no-gutters>
         <v-col cols="6">
-          <chart :chart-data="datacollection" />
+          <chart :chart-data="datacollection" :options="chartoptions" />
         </v-col>
         <v-col cols="5">
           <div>
@@ -59,6 +59,29 @@ export default {
   },
   data() {
     return {
+      chartoptions: {
+        scales: {
+          yAxes: [
+            {
+              gridLines: {
+                display: false
+              }
+            }
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                display: false
+              }
+            }
+          ]
+        },
+        legend: {
+          display: true
+        },
+        responsive: true,
+        maintainAspectRatio: true
+      },
       datacollection: null,
       sq_visible: true,
       overallPriceChange: this.sellhistory.overallChange,

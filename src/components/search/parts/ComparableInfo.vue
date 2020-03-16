@@ -8,7 +8,7 @@
       </v-card-title>
       <v-row no-gutters>
         <v-col cols="5">
-          <chart :chart-data="datacollection" />
+          <chart :chart-data="datacollection" :options="chartoptions" />
         </v-col>
         <v-col cols="5">
           <div class="graph-settings">
@@ -94,6 +94,33 @@ export default {
   },
   data() {
     return {
+      chartoptions: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                min: 0
+              },
+              gridLines: {
+                display: false
+              }
+            }
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                display: false
+              }
+            }
+          ]
+        },
+        legend: {
+          display: true
+        },
+        responsive: true,
+        maintainAspectRatio: false
+      },
       radius: "5",
       datacollection: null,
       sq_visible: true,
