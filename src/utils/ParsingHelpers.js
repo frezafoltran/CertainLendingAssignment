@@ -158,8 +158,15 @@ export function parsePrice(price) {
 
     var out = price >= 1000 ? (price / 1000) : price;
     if (out % 1 == 0) {
-        return "$" + out.toFixed(0) + "K";
+        out = "$" + out.toFixed(0);
     }
-    return "$" + out.toFixed(2) + "K";
+    else {
+        out = "$" + out.toFixed(2);
+    }
+
+    if (price >= 1000) {
+        return out + "K";
+    }
+    return out;
 }
 
