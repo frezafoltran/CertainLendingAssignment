@@ -1,0 +1,1 @@
+This directory is copied over to the production output 'dist' folder without being handled by Webpack. Useful for certain config files, like .npmrc for private NPM packages or Netlify's _redirects for history mode, etc.

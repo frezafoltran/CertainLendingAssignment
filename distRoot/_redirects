@@ -1,0 +1,4 @@
+# Because you're developing a single page application, you probably want history push state to work so that 
+# you have clean URLs (no /#/home). This will effectively serve the index.html instead of giving a 404 no 
+# matter what URL the browser requests, which allows Vue Router to handle direct URL requests appropriately.
+/*    /index.html   200
