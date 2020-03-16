@@ -10,13 +10,13 @@ export function getSalesComparableURL(addressObj, radius) {
     base += "/" + addressObj.state;
     base += "/" + addressObj.zip;
 
-    base += "?searchType=Radius&minComps=1&maxComps=10&";
+    //base += "?searchType=Radius&minComps=1&maxComps=10&";
 
     var tail = "&bedroomsRange=2&bathroomRange=2&sqFeetRange=600&lotSizeRange=2000&saleDateRange=6&yearBuiltRange=10&ownerOccupied=Both&distressed=IncludeDistressed";
 
-    var r1 = base + "miles=" + "1" + tail;
-    var r5 = base + "miles=" + "5" + tail;
-    var r10 = base + "miles=" + "10" + tail;
+    var r1 = base + "?searchType=Radius&minComps=1&maxComps=10&" + "miles=" + "1" + tail;
+    var r5 = base + "?searchType=Radius&minComps=1&maxComps=20&" + "miles=" + "5" + tail;
+    var r10 = base + "?searchType=Radius&minComps=1&maxComps=30&" + "miles=" + "10" + tail;
 
     return {
         "1": { "url": r1, "key": apikey },
